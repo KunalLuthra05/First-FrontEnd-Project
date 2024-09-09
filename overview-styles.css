@@ -1,0 +1,78 @@
+/* Existing styles */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), 
+                url('flag.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333; /* Slightly darker color for readability */
+}
+
+header {
+    background-color: rgba(255, 153, 51, 0.85); /* Saffron (orange) with a bit more opacity */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.content {
+    padding: 20px;
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.85); /* White with reduced opacity for better visibility */
+    border-radius: 8px;
+}
+
+.section {
+    background-color: rgba(255, 255, 255, 0.8); /* White with a little more transparency */
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    border-left: 5px solid #138808; /* Green border on the left */
+}
+
+.section h2 {
+    font-size: 2em;
+    color: #FF9933; /* Saffron (orange) */
+    margin-bottom: 10px;
+}
+
+.section p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #333; /* Slightly darker for readability */
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    background-color: #138808; /* Green */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0e5d05; /* Slightly darker green */
+}

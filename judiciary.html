@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Judiciary</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), 
+                        url('flag.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333; /* Slightly darker color for readability */
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        header {
+            background-color: rgba(255, 153, 51, 0.85); /* Saffron (orange) with a bit more opacity */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            width: 100%;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .content {
+            padding: 20px;
+            max-width: 800px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.85); /* White with reduced opacity for better visibility */
+            border-radius: 8px;
+        }
+
+        .section {
+            background-color: rgba(255, 255, 255, 0.8); /* White with a little more transparency */
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            border-left: 5px solid #138808; /* Green border on the left */
+        }
+
+        .section h2 {
+            font-size: 2em;
+            color: #FF9933; /* Saffron (orange) */
+            margin-bottom: 10px;
+        }
+
+        .section p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #333; /* Slightly darker for readability */
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background-color: #138808; /* Green */
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #0e5d05; /* Slightly darker green */
+        }
+
+        body.fade-out {
+            animation: fadeOut 1s forwards;
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0.95); /* Optional: adds a slight zoom-out effect */
+            }
+        }
+
+        .key-articles, .general-provisions {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-left: 5px solid #FF9933;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            width: 100%;
+        }
+
+        .key-articles h3, .general-provisions h3 {
+            font-size: 1.8em;
+            color: #138808;
+            margin-bottom: 15px;
+        }
+
+        .key-articles ul, .general-provisions ul {
+            list-style-type: none;
+            padding: 0;
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        .key-articles li, .general-provisions li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Judiciary</h1>
+    </header>
+
+    <section class="content">
+        <div class="section">
+            <h2>About the Judiciary</h2>
+            <p>The Judiciary is responsible for interpreting and applying the law. It ensures justice and protects the rights of individuals. It includes the Supreme Court at the national level, High Courts at the state level, and various subordinate courts. The Judiciary upholds the Constitution and ensures that laws comply with constitutional principles.</p>
+        </div>
+
+        <div class="key-articles">
+            <h3>Key Articles:</h3>
+            <ul>
+                <li><strong>Part V: The Union</strong> (Chapters on the Judiciary)</li>
+                <li>Article 124-147: Establishment and jurisdiction of the Supreme Court of India</li>
+                <li>Article 136: Special leave petition to the Supreme Court</li>
+                <li>Article 143: Advisory jurisdiction of the Supreme Court</li>
+                <li><strong>Part VI: The States</strong> (State Judiciary)</li>
+                <li>Article 214-237: High Courts in the States and subordinate courts</li>
+                <li><strong>Part XIV-A: Tribunals</strong></li>
+                <li>Article 323-A: Administrative Tribunals</li>
+                <li>Article 323-B: Tribunals for other matters</li>
+            </ul>
+        </div>
+
+        <div class="general-provisions">
+            <h3>General Constitutional Provisions:</h3>
+            <ul>
+                <li><strong>Part III: Fundamental Rights</strong> (applicable to all three institutions)</li>
+                <li>Articles 12-35: Rights that must be upheld by the Judiciary, Executive, and Legislature.</li>
+                <li><strong>Part IV: Directive Principles of State Policy</strong></li>
+                <li>Articles 36-51: Guidelines for all three branches in governance.</li>
+            </ul>
+        </div>
+
+        <a href="overview.html" class="btn" aria-label="Back to Overview">Back to Overview</a>
+    </section>
+
+    <script>
+        document.querySelectorAll('a').forEach(anchor => {
+            anchor.addEventListener('click', function(event) {
+                if (this.getAttribute('href') !== '#') {
+                    event.preventDefault();
+                    document.body.classList.add('fade-out');
+                    setTimeout(() => {
+                        window.location.href = this.getAttribute('href');
+                    }, 1000); // Match this time with the animation duration
+                }
+            });
+        });
+    </script>
+
+<!-- <iframe src="chatbot.html" style="border:none; width:100%; height:400px; position:fixed; bottom:0; right:0; z-index:1000;"></iframe> -->
+
+</body>
+</html>

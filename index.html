@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constitution Simplified</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="hero">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>Constitution Simplified</h1>
+            <p>Easy to Learn | Easy to Apply</p>
+            <a href="overview.html" class="btn" id="getStarted">Get Started</a>
+        </div>
+        <div class="top-right-buttons">
+            <a href="#about-us" class="btn" id="aboutUs">About Us</a>
+            <a href="#contact-us" class="btn" id="contactUs">Contact Us</a>
+        </div>
+    </div>
+
+    <!-- <section id="about-us" class="about-us">
+        <div class="content">
+            <h2>About Us</h2>
+            <p>We are dedicated to providing clear and concise information about the Constitution of India. Our goal is to make understanding and applying the Constitution easier for everyone.</p>
+        </div>
+    </section> -->
+
+    <!-- <section id="contact-us" class="contact-us">
+        <div class="content">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or feedback, feel free to reach out to us at:</p>
+            <p>Email: <a href="mailto:info@constitutionwebsite.com">info@constitutionwebsite.com</a></p>
+            <p>Phone: +91-123-456-7890</p>
+        </div>
+    </section> -->
+
+    <script>
+        document.getElementById('getStarted').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.body.classList.add('fade-out');
+            setTimeout(function() {
+                window.location.href = 'overview.html';
+            }, 1000); // Match this time with the animation duration
+        });
+    </script>
+</body>
+</html>

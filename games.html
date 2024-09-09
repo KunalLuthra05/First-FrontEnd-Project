@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), 
+                        url('flag.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333; /* Slightly darker color for readability */
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        header {
+            background-color: rgba(255, 153, 51, 0.85); /* Saffron (orange) with a bit more opacity */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            width: 100%;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .content {
+            padding: 20px;
+            max-width: 800px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.85); /* White with reduced opacity for better visibility */
+            border-radius: 8px;
+        }
+
+        .section {
+            background-color: rgba(255, 255, 255, 0.8); /* White with a little more transparency */
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            border-left: 5px solid #138808; /* Green border on the left */
+        }
+
+        .section h2 {
+            font-size: 2em;
+            color: #FF9933; /* Saffron (orange) */
+            margin-bottom: 10px;
+        }
+
+        .section p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #333; /* Slightly darker for readability */
+        }
+
+        .quiz-container {
+            text-align: left;
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        .question {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .options label {
+            display: block;
+            margin: 5px 0;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background-color: #138808; /* Green */
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #0e5d05; /* Slightly darker green */
+        }
+
+        body.fade-out {
+            animation: fadeOut 1s forwards;
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0.95); /* Optional: adds a slight zoom-out effect */
+            }
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #138808;
+        }
+
+        .feedback {
+            font-size: 1em;
+            color: #d9534f; /* Red for incorrect answers */
+            margin: 10px 0;
+        }
+
+        .correct {
+            font-size: 1em;
+            color: #5bc0de; /* Blue for correct information */
+            margin: 10px 0;
+        }
+
+        /* Role-Playing Scenarios Section Styles */
+.roleplay-section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly opaque white */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.roleplay-section h2 {
+    font-size: 2.5em;
+    color: #FF9933; /* Saffron (orange) */
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.scenario {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #FFFFFF; /* Pure white */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.scenario h3 {
+    font-size: 2em;
+    color: #FF9933; /* Saffron (orange) */
+    margin-bottom: 10px;
+}
+
+.scenario p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.scenario button {
+    padding: 10px 15px;
+    font-size: 1em;
+    color: rgb(0, 0, 0);
+    background-color: #f2f9f1; /* Green */
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.scenario button:hover {
+    background-color: #5de742; /* Slightly darker green */
+}
+
+.result {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ff0000; /* Red for feedback */
+    margin-top: 15px;
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Games</h1>
+    </header>
+
+    <section class="content">
+        <div class="section">
+            <h2>Interactive Quiz</h2>
+            <p>Test your knowledge about the Indian Constitution with this quiz. Select the correct answers to see how much you have learned!</p>
+        </div>
+
+        <div class="quiz-container">
+            <!-- Quiz Question 1 -->
+            <div class="question">
+                <p>1. Which Article of the Constitution provides for the composition of the Rajya Sabha?</p>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="A"> Article 79</label>
+                    <label><input type="radio" name="q1" value="B"> Article 123</label>
+                    <label><input type="radio" name="q1" value="C"> Article 80</label>
+                    <label><input type="radio" name="q1" value="D"> Article 168</label>
+                </div>
+                <div id="feedback-q1" class="feedback"></div>
+                <div id="correct-q1" class="correct"></div>
+            </div>
+
+            <!-- Quiz Question 2 -->
+            <div class="question">
+                <p>2. What is the main function of the Executive in the Indian Constitution?</p>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="A"> Enforcing laws</label>
+                    <label><input type="radio" name="q2" value="B"> Interpreting laws</label>
+                    <label><input type="radio" name="q2" value="C"> Making laws</label>
+                    <label><input type="radio" name="q2" value="D"> Reviewing laws</label>
+                </div>
+                <div id="feedback-q2" class="feedback"></div>
+                <div id="correct-q2" class="correct"></div>
+            </div>
+
+            <!-- Quiz Question 3 -->
+            <div class="question">
+                <p>3. Which Article deals with the establishment and jurisdiction of the Supreme Court?</p>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="A"> Article 124</label>
+                    <label><input type="radio" name="q3" value="B"> Article 214</label>
+                    <label><input type="radio" name="q3" value="C"> Article 323-A</label>
+                    <label><input type="radio" name="q3" value="D"> Article 153</label>
+                </div>
+                <div id="feedback-q3" class="feedback"></div>
+                <div id="correct-q3" class="correct"></div>
+            </div>
+
+            <!-- Quiz Question 4 -->
+            <div class="question">
+                <p>4. Who appoints the Governor of a State?</p>
+                <div class="options">
+                    <label><input type="radio" name="q4" value="A"> The Prime Minister</label>
+                    <label><input type="radio" name="q4" value="B"> The President</label>
+                    <label><input type="radio" name="q4" value="C"> The Chief Minister</label>
+                    <label><input type="radio" name="q4" value="D"> The Rajya Sabha</label>
+                </div>
+                <div id="feedback-q4" class="feedback"></div>
+                <div id="correct-q4" class="correct"></div>
+            </div>
+
+            <!-- Quiz Question 5 -->
+            <div class="question">
+                <p>5. Which Article gives the President the power to promulgate ordinances?</p>
+                <div class="options">
+                    <label><input type="radio" name="q5" value="A"> Article 123</label>
+                    <label><input type="radio" name="q5" value="B"> Article 213</label>
+                    <label><input type="radio" name="q5" value="C"> Article 124</label>
+                    <label><input type="radio" name="q5" value="D"> Article 168</label>
+                </div>
+                <div id="feedback-q5" class="feedback"></div>
+                <div id="correct-q5" class="correct"></div>
+            </div>
+
+            <!-- Quiz Question 6 -->
+            <div class="question">
+                <p>6. Which Article of the Constitution outlines the Directive Principles of State Policy?</p>
+                <div class="options">
+                    <label><input type="radio" name="q6" value="A"> Article 36</label>
+                    <label><input type="radio" name="q6" value="B"> Article 35</label>
+                    <label><input type="radio" name="q6" value="C"> Article 37</label>
+                    <label><input type="radio" name="q6" value="D"> Article 39</label>
+                </div>
+                <div id="feedback-q6" class="feedback"></div>
+                <div id="correct-q6" class="correct"></div>
+            </div>
+
+            <!-- Quiz Question 7 -->
+            <div class="question">
+                <p>7. Who has the power to amend the Constitution?</p>
+                <div class="options">
+                    <label><input type="radio" name="q7" value="A"> The Supreme Court</label>
+                    <label><input type="radio" name="q7" value="B"> The Parliament</label>
+                    <label><input type="radio" name="q7" value="C"> The President</label>
+                    <label><input type="radio" name="q7" value="D"> The Prime Minister</label>
+                </div>
+                <div id="feedback-q7" class="feedback"></div>
+                <div id="correct-q7" class="correct"></div>
+            </div>
+
+            <!-- Quiz Question 8 -->
+            <div class="question">
+                <p>8. What is the main role of the Legislature?</p>
+                <div class="options">
+                    <label><input type="radio" name="q8" value="A"> To legislate</label>
+                    <label><input type="radio" name="q8" value="B"> To execute laws</label>
+                    <label><input type="radio" name="q8" value="C"> To adjudicate and review laws</label>
+                    <label><input type="radio" name="q8" value="D"> To appoint judges</label>
+                </div>
+                <div id="feedback-q8" class="feedback"></div>
+                <div id="correct-q8" class="correct"></div>
+            </div>
+
+            <button class="btn" onclick="checkAnswers()">Submit Answers</button>
+            <div id="result" class="result"></div>
+        </div>
+
+        
+    </section>
+
+     <!-- Role-Playing Scenarios Section -->
+     <div class="section roleplay-section">
+        <h2>Role-Playing Scenarios</h2>
+
+        <!-- Scenario 1: President -->
+        <div class="scenario">
+            <h3>Scenario 1: President</h3>
+            <p>You are the President of India. A bill has been passed by both houses of Parliament, but you have reservations about its content. What would you do?</p>
+            <button onclick="evaluateScenario(1, 'a')">Option A: Give assent to the bill.</button>
+            <button onclick="evaluateScenario(1, 'b')">Option B: Withhold assent and return the bill to Parliament with a request for reconsideration.</button>
+            <button onclick="evaluateScenario(1, 'c')">Option C: Reject the bill outright without providing any reasons.</button>
+            <p id="result1" class="result"></p>
+        </div>
+
+        <!-- Scenario 2: Prime Minister -->
+        <div class="scenario">
+            <h3>Scenario 2: Prime Minister</h3>
+            <p>You are the Prime Minister and need to address a national crisis. How would you coordinate with other branches of government to manage the situation?</p>
+            <button onclick="evaluateScenario(2, 'a')">Option A: Act unilaterally without consulting other branches.</button>
+            <button onclick="evaluateScenario(2, 'b')">Option B: Work with the Cabinet, keep Parliament informed, and liaise with the President.</button>
+            <button onclick="evaluateScenario(2, 'c')">Option C: Delegate the crisis management to a junior minister.</button>
+            <p id="result2" class="result"></p>
+        </div>
+
+        <!-- Scenario 3: Cabinet Member -->
+        <div class="scenario">
+            <h3>Scenario 3: Cabinet Member</h3>
+            <p>You are a Cabinet member tasked with formulating a new policy. What steps would you take to ensure its successful implementation?</p>
+            <button onclick="evaluateScenario(3, 'a')">Option A: Prepare a draft policy and present it directly to Parliament.</button>
+            <button onclick="evaluateScenario(3, 'b')">Option B: Conduct thorough research, consult with experts, and prepare a detailed implementation plan.</button>
+            <button onclick="evaluateScenario(3, 'c')">Option C: Implement the policy without any prior research or planning.</button>
+            <p id="result3" class="result"></p>
+        </div>
+
+        <!-- Scenario 4: Attorney General -->
+        <div class="scenario">
+            <h3>Scenario 4: Attorney General</h3>
+            <p>You are the Attorney General and a significant legal issue arises involving the Union Government. What is your role?</p>
+            <button onclick="evaluateScenario(4, 'a')">Option A: Ignore the issue as it is not within your jurisdiction.</button>
+            <button onclick="evaluateScenario(4, 'b')">Option B: Provide legal advice to the government and represent it in court.</button>
+            <button onclick="evaluateScenario(4, 'c')">Option C: Resign from your position to avoid handling the issue.</button>
+            <p id="result4" class="result"></p>
+        </div>
+
+        <!-- Scenario 5: Chief Minister -->
+        <div class="scenario">
+            <h3>Scenario 5: Chief Minister</h3>
+            <p>You are the Chief Minister and need to implement a new state policy. How would you go about ensuring its successful implementation?</p>
+            <button onclick="evaluateScenario(5, 'a')">Option A: Announce the policy without preparing an implementation plan.</button>
+            <button onclick="evaluateScenario(5, 'b')">Option B: Coordinate with your Cabinet, prepare a detailed plan, and ensure effective communication with stakeholders.</button>
+            <button onclick="evaluateScenario(5, 'c')">Option C: Delegate the policy implementation to an external agency.</button>
+            <p id="result5" class="result"></p>
+        </div>
+    </div>
+
+    <a style="background-color: rgba(6, 103, 145, 0.705);" href="overview.html" class="btn">Back to Overview</a>
+</section>
+
+    <script>
+        function checkAnswers() {
+            const correctAnswers = {
+                q1: 'C',
+                q2: 'A',
+                q3: 'A',
+                q4: 'B',
+                q5: 'A',
+                q6: 'C',
+                q7: 'B',
+                q8: 'A'
+            };
+
+            const explanations = {
+                q1: "Article 80 of the Indian Constitution provides for the composition of the Rajya Sabha (Council of States).",
+                q2: "The main function of the Executive is to enforce laws.",
+                q3: "Article 124 deals with the establishment and jurisdiction of the Supreme Court.",
+                q4: "The Governor of a State is appointed by the President.",
+                q5: "Article 123 gives the President the power to promulgate ordinances.",
+                q6: "Article 37 outlines the Directive Principles of State Policy.",
+                q7: "The power to amend the Constitution is vested in the Parliament.",
+                q8: "The main role of the Legislature is to legislate, i.e., make laws."
+            };
+
+            let score = 0;
+            let totalQuestions = Object.keys(correctAnswers).length;
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const selectedOption = document.querySelector(`input[name="q${i}"]:checked`);
+                const feedbackDiv = document.getElementById(`feedback-q${i}`);
+                const correctDiv = document.getElementById(`correct-q${i}`);
+
+                if (selectedOption) {
+                    if (selectedOption.value === correctAnswers[`q${i}`]) {
+                        score++;
+                        feedbackDiv.textContent = "";
+                        correctDiv.textContent = "";
+                    } else {
+                        feedbackDiv.textContent = "Incorrect! ";
+                        feedbackDiv.textContent += explanations[`q${i}`];
+                        correctDiv.textContent = "";
+                    }
+                } else {
+                    feedbackDiv.textContent = "No answer selected.";
+                    correctDiv.textContent = explanations[`q${i}`];
+                }
+            }
+
+            const resultDiv = document.getElementById('result');
+            resultDiv.textContent = `You got ${score} out of ${totalQuestions} correct.`;
+        }
+
+        document.querySelectorAll('a').forEach(anchor => {
+            anchor.addEventListener('click', function(event) {
+                if (this.getAttribute('href') !== '#') {
+                    event.preventDefault();
+                    document.body.classList.add('fade-out');
+                    setTimeout(() => {
+                        window.location.href = this.getAttribute('href');
+                    }, 1000); // Match this time with the animation duration
+                }
+            });
+        });
+
+        // JavaScript code for handling role-playing scenarios
+function evaluateScenario(scenarioId, selectedOption) {
+    const resultElement = document.getElementById(`result${scenarioId}`);
+    
+    let correctAnswer;
+    let feedback;
+
+    switch (scenarioId) {
+        case 1:
+            if (selectedOption === 'b') {
+                feedback = 'Correct! The President can withhold assent and return the bill to Parliament with a request for reconsideration.';
+            } else {
+                feedback = 'Incorrect. The President can withhold assent and return the bill to Parliament with a request for reconsideration.';
+            }
+            break;
+        case 2:
+            if (selectedOption === 'b') {
+                feedback = 'Correct! As Prime Minister, you should work with the Cabinet, keep Parliament informed, and liaise with the President.';
+            } else {
+                feedback = 'Incorrect. You should work with the Cabinet, keep Parliament informed, and liaise with the President.';
+            }
+            break;
+        case 3:
+            if (selectedOption === 'b') {
+                feedback = 'Correct! Conduct thorough research, consult with experts, and prepare a detailed implementation plan.';
+            } else {
+                feedback = 'Incorrect. You should conduct thorough research, consult with experts, and prepare a detailed implementation plan.';
+            }
+            break;
+        case 4:
+            if (selectedOption === 'b') {
+                feedback = 'Correct! The Attorney General provides legal advice to the government and represents it in court.';
+            } else {
+                feedback = 'Incorrect. The Attorney General provides legal advice to the government and represents it in court.';
+            }
+            break;
+        case 5:
+            if (selectedOption === 'b') {
+                feedback = 'Correct! As Chief Minister, you should work with the Cabinet and consult with experts to manage the state effectively.';
+            } else {
+                feedback = 'Incorrect. As Chief Minister, you should work with the Cabinet and consult with experts to manage the state effectively.';
+            }
+            break;
+        default:
+            feedback = 'Scenario not found.';
+    }
+
+    resultElement.textContent = feedback;
+}
+
+    </script>
+
+<!-- <iframe src="chatbot.html" style="border:none; width:100%; height:400px; position:fixed; bottom:0; right:0; z-index:1000;"></iframe> -->
+
+</body>
+</html>

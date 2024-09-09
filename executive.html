@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), 
+                        url('flag.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333; /* Slightly darker color for readability */
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        header {
+            background-color: rgba(255, 153, 51, 0.85); /* Saffron (orange) with a bit more opacity */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            width: 100%;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .content {
+            padding: 20px;
+            max-width: 800px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.85); /* White with reduced opacity for better visibility */
+            border-radius: 8px;
+        }
+
+        .section {
+            background-color: rgba(255, 255, 255, 0.8); /* White with a little more transparency */
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            border-left: 5px solid #138808; /* Green border on the left */
+        }
+
+        .section h2 {
+            font-size: 2em;
+            color: #FF9933; /* Saffron (orange) */
+            margin-bottom: 10px;
+        }
+
+        .section p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #333; /* Slightly darker for readability */
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background-color: #138808; /* Green */
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #0e5d05; /* Slightly darker green */
+        }
+
+        body.fade-out {
+            animation: fadeOut 1s forwards;
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0.95); /* Optional: adds a slight zoom-out effect */
+            }
+        }
+
+        .details, .key-articles {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-left: 5px solid #FF9933;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            width: 100%;
+        }
+
+        .details h3, .key-articles h3 {
+            font-size: 1.8em;
+            color: #138808;
+            margin-bottom: 15px;
+        }
+
+        .details ul, .key-articles ul {
+            list-style-type: none;
+            padding: 0;
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        .details li, .key-articles li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Executive</h1>
+    </header>
+
+    <section class="content">
+        <div class="section">
+            <h2>About the Executive</h2>
+            <p>The Executive branch is responsible for implementing and enforcing laws. It includes the President, the Prime Minister, the Cabinet, and state-level executives such as the Governor and Chief Minister. This branch ensures that laws passed by the Legislature are executed effectively and that the administration of government is conducted smoothly.</p>
+        </div>
+
+        <div class="key-articles">
+            <h3>Key Articles:</h3>
+            <ul>
+                <li><strong>Part V: The Union</strong> (Chapters on Executive)</li>
+                <li>Article 52: The President of India</li>
+                <li>Article 53-78: Powers and duties of the President, Vice-President, and the Union Executive (Council of Ministers, Attorney General)</li>
+                <li>Article 74-75: Role of the Prime Minister and Council of Ministers</li>
+                <li><strong>Part VI: The States</strong> (State Executives)</li>
+                <li>Article 153-167: The Governor, Chief Minister, and Council of Ministers at the state level</li>
+                <li>Article 213: Governor's power to promulgate ordinances</li>
+                <li><strong>Part XIV: Services under the Union and States</strong></li>
+                <li>Article 308-323: Recruitment and conditions of service of people serving under the Union and States (Public Service Commissions)</li>
+            </ul>
+        </div>
+
+        <div class="details">
+            <h3>Key Figures and Their Roles:</h3>
+            <ul>
+                <li><strong>President:</strong> The ceremonial head of state who also has powers related to appointments and legislative functions.</li>
+                <li><strong>Vice-President:</strong> The second-highest official, mainly responsible for presiding over the Rajya Sabha (Council of States) and acting as President in the latter’s absence.</li>
+                <li><strong>Prime Minister:</strong> The head of government who leads the executive branch and oversees the functioning of the Cabinet.</li>
+                <li><strong>Council of Ministers:</strong> A group of ministers appointed by the Prime Minister to head various government departments and execute policies.</li>
+                <li><strong>Governor:</strong> The head of state government in each state, responsible for appointing the Chief Minister and overseeing the state’s executive functions.</li>
+                <li><strong>Chief Minister:</strong> The head of government at the state level who leads the state executive and manages the administration.</li>
+            </ul>
+        </div>
+
+        <a href="overview.html" class="btn" aria-label="Back to Overview">Back to Overview</a>
+    </section>
+
+    <script>
+        document.querySelectorAll('a').forEach(anchor => {
+            anchor.addEventListener('click', function(event) {
+                if (this.getAttribute('href') !== '#') {
+                    event.preventDefault();
+                    document.body.classList.add('fade-out');
+                    setTimeout(() => {
+                        window.location.href = this.getAttribute('href');
+                    }, 1000); // Match this time with the animation duration
+                }
+            });
+        });
+    </script>
+
+<!-- <iframe src="chatbot.html" style="border:none; width:100%; height:400px; position:fixed; bottom:0; right:0; z-index:1000;"></iframe> -->
+
+</body>
+</html>
